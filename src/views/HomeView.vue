@@ -26,7 +26,7 @@ import TheWelcome from '../components/TheWelcome.vue'
 const showWelcomePage = ref(true)
 
 function onVideoEnded() {
-  showWelcomePage.value = true
+  showWelcomePage.value = false
 }
 </script>
 
