@@ -1,0 +1,40 @@
+/* color palette from <https://github.com/vuejs/theme> */
+
+$primary: #e91e63;
+
+.btn-primary {
+  --mdb-primary: $primary;
+  --mdb-btn-bg: $primary;
+  --mdb-btn-color: #fff;
+  --mdb-btn-box-shadow: 0 4px 9px -4px $primary;
+  --mdb-btn-hover-bg: $primary;
+  --mdb-btn-hover-color: #fff;
+  --mdb-btn-focus-bg: $primary;
+  --mdb-btn-focus-color: #fff;
+  --mdb-btn-active-bg: $primary;
+  --mdb-btn-active-color: #fff;
+  --mdb-btn-box-shadow-state: 0 8px 9px -4px rgba($primary, 0.3), 0 4px 18px 0 rgba($primary, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
