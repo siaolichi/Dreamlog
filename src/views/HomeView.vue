@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="video-background-wrapper" v-if="!showWelcomePage">
+    <div class="video-background__wrapper" v-if="!showWelcomePage">
       <video
         autoplay
         muted
@@ -15,6 +15,9 @@
         />
       </video>
     </div>
+    <div v-if="!showWelcomePage" class="video-background__skip">
+      <div class="video-background__skip-button" @click="onClickSkip">SKIP<br />INTRO</div>
+    </div>
     <TheWelcome v-if="showWelcomePage" />
   </main>
 </template>
@@ -28,18 +31,43 @@ const showWelcomePage = ref(false)
 function onVideoEnded() {
   showWelcomePage.value = true
 }
+
+function onClickSkip() {
+  showWelcomePage.value = true
+}
 </script>
 
-<style>
+<style lang="scss">
 main {
   width: 100%;
   height: 100%;
 }
-.video-background-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+.video-background {
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  &__skip {
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    z-index: 4;
+    &-button {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 50%;
+      background-color: white;
+    }
+  }
 }
 
 .video-bg {
