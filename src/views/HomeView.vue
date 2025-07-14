@@ -23,10 +23,10 @@
 import { ref } from 'vue'
 import TheWelcome from '../components/TheWelcome.vue'
 
-const showWelcomePage = ref(true)
+const showWelcomePage = ref(false)
 
 function onVideoEnded() {
-  showWelcomePage.value = false
+  showWelcomePage.value = true
 }
 </script>
 
